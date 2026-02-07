@@ -114,7 +114,7 @@ export const Hero = () => {
         </div>
         <div className="">
           <span className="block animate-in slide-in-from-bottom-full duration-1000 delay-150 ease-out">
-            Hassan
+            Hasan
           </span>
         </div>
       </h1>
