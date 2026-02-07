@@ -109,7 +109,7 @@ export const Hero = () => {
       >
         <div className="pt-4 -mt-4">
           <span className="block animate-in slide-in-from-bottom-full duration-1000 ease-out">
-            Shaka
+            Bhai
           </span>
         </div>
         <div className="">
