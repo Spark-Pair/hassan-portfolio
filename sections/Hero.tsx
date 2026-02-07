@@ -109,12 +109,12 @@ export const Hero = () => {
       >
         <div className="pt-4 -mt-4">
           <span className="block animate-in slide-in-from-bottom-full duration-1000 ease-out">
-            Shaka
+            Muhammad
           </span>
         </div>
         <div className="">
           <span className="block animate-in slide-in-from-bottom-full duration-1000 delay-150 ease-out">
-            Bhai
+            Hassan
           </span>
         </div>
       </h1>
