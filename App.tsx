@@ -7,10 +7,13 @@ import { ContactSection } from './sections/Contact';
 import { ProjectsSection } from './sections/Projects';
 import { SplashScreen } from './components/SplashScreen';
 import { CustomCursor } from './components/CustomCursor';
+import { ShowReel } from './components/ShowReel';
 
 export default function App() {
   const [isAppLoaded, setIsAppLoaded] = useState(false);
   const [animationStage, setAnimationStage] = useState<'idle' | 'exit' | 'prep'>('prep');
+
+  const [isShowReelOpen, setIsShowReelOpen] = useState(false);
   
   const location = useLocation();
   const navigate = useNavigate();
@@ -63,7 +66,13 @@ export default function App() {
         <>
           <Navbar 
             currentPath={location.pathname} 
-            onNavigate={handleNavigation} 
+            onNavigate={handleNavigation}
+            onToggleShowReel={() => setIsShowReelOpen(true)}
+          />
+
+          <ShowReel 
+            isOpen={isShowReelOpen} 
+            onClose={() => setIsShowReelOpen(false)} 
           />
 
           <CustomCursor />

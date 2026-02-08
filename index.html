@@ -82,6 +82,15 @@
             background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
         }
+        
+        html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
 
         /* Keep this so the scrollbar doesn't look ugly while wheeling */
         .no-scrollbar::-webkit-scrollbar {
@@ -91,6 +100,11 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
             scroll-behavior: auto !important; /* MUST BE AUTO */
+        }
+
+        canvas, img, video {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
         }
     </style>
 <script type="importmap">

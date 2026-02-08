@@ -5,7 +5,7 @@ interface NavbarProps {
   onNavigate: (path: string) => void; // Changed from setSection
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
+export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onToggleShowReel }) => {
   const sections = [
     { path: '/', label: 'HOME' },
     { path: '/projects', label: 'WORK' },
@@ -102,7 +102,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
       </div>
 
       {/* Showreel Button */}
-      <div className="flex items-center gap-4 group cursor-pointer pointer-events-auto bg-black/40 backdrop-blur-xl border border-white/10 p-1.5 rounded-full shadow-2xl pl-6 pr-2">
+      <div 
+        onClick={onToggleShowReel} // Use the prop here
+        className="flex items-center gap-4 group cursor-pointer pointer-events-auto bg-black/40 backdrop-blur-xl border border-white/10 p-1.5 rounded-full shadow-2xl pl-6 pr-2 hover:border-white/30 transition-all active:scale-95"
+      >
         <span className="text-[10px] font-black tracking-[0.2em] uppercase text-zinc-500 group-hover:text-white transition-colors">
           Showreel
         </span>
