@@ -50,12 +50,12 @@ export const PROJECTS: Project[] = [
     technologies: ["Next.js", "TailwindCSS", "React"],
     deliverables: ["Portfolio Showcase", "Company Profile", "Interactive UI/UX Design", "Responsive Web Design"],
     screenshots: [
-      { id: "s01", title: "Projects", url: "/images/sparkpair/screenshot_1.png" },
-      { id: "s02", title: "Bio", url: "/images/sparkpair/screenshot_2.png" },
-      { id: "s03", title: "Footer", url: "/images/sparkpair/screenshot_3.png" },
+      { id: "s01", title: "Projects", url: "/images/sparkpair/screenshot_1.webp" },
+      { id: "s02", title: "Bio", url: "/images/sparkpair/screenshot_2.webp" },
+      { id: "s03", title: "Footer", url: "/images/sparkpair/screenshot_3.webp" },
     ],
     video: "",
-    image: "/images/sparkpair/sparkpair.png",
+    image: "/images/sparkpair/sparkpair.webp",
     link: "#"
   },
   {
@@ -66,12 +66,12 @@ export const PROJECTS: Project[] = [
     technologies: ["PHP", "Laravel", "SQLite 3"],
     deliverables: ["ERP System Architecture", "Inventory & Stock Management Modules", "Billing & Invoicing Dashboard", "AI-Powered Production Insights", "UI/UX Design for Factory Workflow"],
     screenshots: [
-      { id: "s01", title: "Menu", url: "/images/garmentsos-pro/screenshot_1.png" },
-      { id: "s02", title: "Showcase", url: "/images/garmentsos-pro/screenshot_2.png" },
-      { id: "s03", title: "Form", url: "/images/garmentsos-pro/screenshot_3.png" }
+      { id: "s01", title: "Menu", url: "/images/garmentsos-pro/screenshot_1.webp" },
+      { id: "s02", title: "Showcase", url: "/images/garmentsos-pro/screenshot_2.webp" },
+      { id: "s03", title: "Form", url: "/images/garmentsos-pro/screenshot_3.webp" }
     ],
     video: "https://66d826c261a09e6dd86411f9--voluble-concha-c3ad1a.netlify.app/mtc-showreel.mp4",
-    image: "/images/garmentsos-pro/garmentsos-pro.png",
+    image: "/images/garmentsos-pro/garmentsos-pro.webp",
     link: "#"
   },
   {
@@ -82,12 +82,12 @@ export const PROJECTS: Project[] = [
     technologies: ["MongoDB", "Express.js", "React.js", "Node JS"],
     deliverables: ["SaaS Multi-Tenant Architecture", "Order Management Modules", "Client & Sales Analytics Dashboard", "Responsive UI/UX Design"],
     screenshots: [
-      { id: "s01", title: "Menu", url: "/images/textradeos/screenshot_1.png" },
-      { id: "s02", title: "Form", url: "/images/textradeos/screenshot_2.png" },
-      { id: "s02", title: "Subscription Deimage", url: "/images/textradeos/screenshot_3.png" }
+      { id: "s01", title: "Menu", url: "/images/textradeos/screenshot_1.webp" },
+      { id: "s02", title: "Form", url: "/images/textradeos/screenshot_2.webp" },
+      { id: "s02", title: "Subscription Deimage", url: "/images/textradeos/screenshot_3.webp" }
     ],
     video: "",
-    image: "/images/textradeos/textradeos.png",
+    image: "/images/textradeos/textradeos.webp",
     link: "#"
   },
   {
@@ -98,12 +98,12 @@ export const PROJECTS: Project[] = [
     technologies: ["MongoDB", "Express.js", "React.js", "Node JS"],
     deliverables: ["SaaS Architecture", "Automated Invoicing & FBR Integration", "Reporting & Analytics Modules", "Responsive UI/UX Design"],
     screenshots: [
-      { id: "s01", title: "Showcase", url: "/images/novainvoice/screenshot_1.png" },
-      { id: "s02", title: "Customize", url: "/images/novainvoice/screenshot_2.png" },
-      { id: "s03", title: "Bulk Upvideo", url: "/images/novainvoice/screenshot_3.png" }
+      { id: "s01", title: "Showcase", url: "/images/novainvoice/screenshot_1.webp" },
+      { id: "s02", title: "Customize", url: "/images/novainvoice/screenshot_2.webp" },
+      { id: "s03", title: "Bulk Upvideo", url: "/images/novainvoice/screenshot_3.webp" }
     ],
     video: "",
-    image: "/images/novainvoice/novainvoice.png",
+    image: "/images/novainvoice/novainvoice.webp",
     link: "#"
   },
   {
@@ -114,14 +114,14 @@ export const PROJECTS: Project[] = [
     technologies: ["MongoDB", "Express.js", "React.js", "Node JS"],
     deliverables: ["Inventory Module", "Order Tracking", "Basic Reporting", "UI/UX Design for Small Factories"],
     screenshots: [
-      { id: "s01", title: "Form", url: "/images/garmentsos/screenshot_1.png" },
-      { id: "s02", title: "Details", url: "/images/garmentsos/screenshot_2.png" },
-      { id: "s03", title: "Customize", url: "/images/garmentsos/screenshot_3.png" },
-      { id: "s04", title: "System Envideo", url: "/images/garmentsos/screenshot_4.png" },
-      { id: "s05", title: "Profile/Settings", url: "/images/garmentsos/screenshot_5.png" }
+      { id: "s01", title: "Form", url: "/images/garmentsos/screenshot_1.webp" },
+      { id: "s02", title: "Details", url: "/images/garmentsos/screenshot_2.webp" },
+      { id: "s03", title: "Customize", url: "/images/garmentsos/screenshot_3.webp" },
+      { id: "s04", title: "System Envideo", url: "/images/garmentsos/screenshot_4.webp" },
+      { id: "s05", title: "Profile/Settings", url: "/images/garmentsos/screenshot_5.webp" }
     ],
     video: "",
-    image: "/images/garmentsos/garmentsos.png",
+    image: "/images/garmentsos/garmentsos.webp",
     link: "#"
   },
   {
@@ -139,13 +139,13 @@ export const PROJECTS: Project[] = [
       "Responsive UI/UX Design"
     ],
     screenshots: [
-      { id: "s01", title: "Form", url: "/images/edusaas/screenshot_1.png" },
-      { id: "s02", title: "Details", url: "/images/edusaas/screenshot_2.png" },
-      { id: "s03", title: "Attendance", url: "/images/edusaas/screenshot_3.png" },
-      { id: "s04", title: "Exams", url: "/images/edusaas/screenshot_4.png" },
+      { id: "s01", title: "Form", url: "/images/edusaas/screenshot_1.webp" },
+      { id: "s02", title: "Details", url: "/images/edusaas/screenshot_2.webp" },
+      { id: "s03", title: "Attendance", url: "/images/edusaas/screenshot_3.webp" },
+      { id: "s04", title: "Exams", url: "/images/edusaas/screenshot_4.webp" },
     ],
     video: "",
-    image: "/images/edusaas/edusaas.png",
+    image: "/images/edusaas/edusaas.webp",
     link: "#"
   },
   {
@@ -156,13 +156,13 @@ export const PROJECTS: Project[] = [
     technologies: ["MongoDB", "Express.js", "React.js", "Node JS"],
     deliverables: ["SaaS Multi-Tenant Architecture", "Order & Production Management", "Machine Utilization Dashboard", "UI/UX Design for Cloud Platform"],
     screenshots: [
-      { id: "s01", title: "Showcase", url: "/images/embroideryos/screenshot_1.png" },
-      { id: "s02", title: "Form", url: "/images/embroideryos/screenshot_2.png" },
-      { id: "s03", title: "Details", url: "/images/embroideryos/screenshot_3.png" },
-      { id: "s04", title: "System Invideo", url: "/images/embroideryos/screenshot_4.png" },
+      { id: "s01", title: "Showcase", url: "/images/embroideryos/screenshot_1.webp" },
+      { id: "s02", title: "Form", url: "/images/embroideryos/screenshot_2.webp" },
+      { id: "s03", title: "Details", url: "/images/embroideryos/screenshot_3.webp" },
+      { id: "s04", title: "System Invideo", url: "/images/embroideryos/screenshot_4.webp" },
     ],
     video: "",
-    image: "/images/embroideryos/embroideryos.png",
+    image: "/images/embroideryos/embroideryos.webp",
     link: "#"
   },
   {
@@ -197,12 +197,12 @@ export const PROJECTS: Project[] = [
     technologies: ["SQLite 3", "Prisma", "NEXT.JS"],
     deliverables: ["Billing & Payment Modules", "Customer Management", "Operations Dashboard", "UI/UX Design for Water Supply Operations"],
     screenshots: [
-      { id: "s01", title: "Showcase", url: "/images/aquaflow/screenshot_1.png" },
-      { id: "s02", title: "Showcase", url: "/images/aquaflow/screenshot_2.png" },
-      { id: "s03", title: "Form", url: "/images/aquaflow/screenshot_3.png" },
+      { id: "s01", title: "Showcase", url: "/images/aquaflow/screenshot_1.webp" },
+      { id: "s02", title: "Showcase", url: "/images/aquaflow/screenshot_2.webp" },
+      { id: "s03", title: "Form", url: "/images/aquaflow/screenshot_3.webp" },
     ],
     video: "",
-    image: "/images/aquaflow/aquaflow.png",
+    image: "/images/aquaflow/aquaflow.webp",
     link: "#"
   },
   {
@@ -213,12 +213,12 @@ export const PROJECTS: Project[] = [
     technologies: ["Next.js", "React", "TailwindCSS"],
     deliverables: ["Interactive Event Schedule", "Membership Management UI", "Responsive Web Design", "UI/UX Design"],
     screenshots: [
-      { id: "s01", title: "Cards", url: "/images/sidcup-family-golf/screenshot_1.png" },
-      { id: "s02", title: "Marquee", url: "/images/sidcup-family-golf/screenshot_2.png" },
-      { id: "s03", title: "Footer", url: "/images/sidcup-family-golf/screenshot_3.png" },
+      { id: "s01", title: "Cards", url: "/images/sidcup-family-golf/screenshot_1.webp" },
+      { id: "s02", title: "Marquee", url: "/images/sidcup-family-golf/screenshot_2.webp" },
+      { id: "s03", title: "Footer", url: "/images/sidcup-family-golf/screenshot_3.webp" },
     ],
     video: "",
-    image: "/images/sidcup-family-golf/sidcup-family-golf.png",
+    image: "/images/sidcup-family-golf/sidcup-family-golf.webp",
     link: "#"
   },
   {
@@ -229,12 +229,12 @@ export const PROJECTS: Project[] = [
     technologies: ["Next.js", "React", "TailwindCSS"],
     deliverables: ["Full UI Clone", "Interactive Components", "Responsive Design", "Animations & Transitions"],
     screenshots: [
-      { id: "s01", title: "Showcase", url: "/images/equilibrium/screenshot_1.png" },
-      { id: "s02", title: "Showcase", url: "/images/equilibrium/screenshot_2.png" },
-      { id: "s03", title: "Showcase", url: "/images/equilibrium/screenshot_3.png" },
+      { id: "s01", title: "Showcase", url: "/images/equilibrium/screenshot_1.webp" },
+      { id: "s02", title: "Showcase", url: "/images/equilibrium/screenshot_2.webp" },
+      { id: "s03", title: "Showcase", url: "/images/equilibrium/screenshot_3.webp" },
     ],
     video: "",
-    image: "/images/equilibrium/equilibrium.png",
+    image: "/images/equilibrium/equilibrium.webp",
     link: "#"
   },
 ];
