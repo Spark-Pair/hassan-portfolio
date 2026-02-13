@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
     ],
     video: "",
     image: "/images/sparkpair/sparkpair.webp",
-    link: "#"
+    link: "https://www.sparkpair.dev/"
   },
   {
     id: "02",
@@ -219,7 +219,7 @@ export const PROJECTS: Project[] = [
     ],
     video: "",
     image: "/images/sidcup-family-golf/sidcup-family-golf.webp",
-    link: "#"
+    link: "https://clone-sidcupfamilygolf.netlify.app/"
   },
   {
     id: "11",
@@ -235,7 +235,7 @@ export const PROJECTS: Project[] = [
     ],
     video: "",
     image: "/images/equilibrium/equilibrium.webp",
-    link: "#"
+    link: "https://razajp.github.io/Hasananim/"
   },
 ];
 
