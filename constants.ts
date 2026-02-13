@@ -2,18 +2,21 @@
 import { Project, Experience, Skill } from './types';
 
 export const PERSONAL_INFO = {
-  name: "Muhammad Hassan",
-  role: "Full Stack Engineer",
-  email: "hassan@sparkpair.dev",
-  experience: "08+",
-  uptime_mentality: "99.9%",
-  location: "Pakistan",
-  bio: "Passionate Senior Full Stack Engineer with over 8 years of experience building scalable web applications and AI-driven solutions. Expert in React, Node.js, and Cloud Infrastructure.",
-  detailedBio: "My journey in tech began with a curiosity about how the web works, which evolved into a career dedicated to building high-performance systems. I believe that great software isn't just about code—it's about solving real-world problems with elegance and efficiency.",
-  mission: "To bridge the gap between complex engineering and intuitive user experiences, one pixel at a time.",
-  linkedin: "https://linkedin.com/in/mr-itear",
-  github: "https://github.com/hassan-ng",
-  instagram: "https://instagram.com/mr_itear"
+  name: import.meta.env.VITE_NAME,
+  firstName: import.meta.env.VITE_NAME.split(" ")[0],
+  lastName: import.meta.env.VITE_NAME.split(" ")[1],
+  role: import.meta.env.VITE_ROLE,
+  shortRole: import.meta.env.VITE_SHORT_ROLE,
+  email: import.meta.env.VITE_EMAIL,
+  experience: import.meta.env.VITE_EXPERIENCE,
+  uptime_mentality: import.meta.env.VITE_UPTIME_MENTALITY,
+  location: import.meta.env.VITE_LOCATION,
+  bio: import.meta.env.VITE_BIO,
+  detailedBio: import.meta.env.VITE_DETAILED_BIO,
+  mission: import.meta.env.VITE_MISSION,
+  linkedin: import.meta.env.VITE_LINKEDIN,
+  github: import.meta.env.VITE_GITHUB,
+  instagram: import.meta.env.VITE_INSTAGRAM,
 };
 
 export const SKILLS: Skill[] = [
@@ -27,74 +30,221 @@ export const SKILLS: Skill[] = [
   { name: "AWS", icon: "fa-brands fa-aws" }
 ];
 
+// GarmentsOS PRO -> Garments ERP
+// TexTradeOS -> Sales Manager For Garments Whole Salers
+// NovaInvoice -> FBR integrated invoice manager
+// GarmentsOS -> Light weight Garments Business management system
+// EduSaaS -> A system for schools to manage students and parents can scan qr on ID Card and check students attendance, exam reports
+// EmroideryOS -> Embroidery Business management system
+// Ad-Duha -> A management system for an studio handling events for photography videography and live streaming ("SQLite 3", "Prisma", "NEXT.JS")
+// AquaFlow Manager -> Water supply business management system
+// SparkPair -> My company site
+// Sidcup Family Golf -> A gold site clone
+// Equilibrium -> A site clone
 export const PROJECTS: Project[] = [
   {
     id: "01",
-    title: "AI Narrative Engine",
-    description: "A generative AI platform that creates long-form narratives and marketing copy using Gemini Pro. Integrated with complex prompt engineering flows.",
-    technologies: ["React", "Gemini API", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
+    title: "SparkPair",
+    caseStudyDetail: "Corporate site for SparkPair, showcasing projects, services, and company profile.",
+    description: "The official website of SparkPair, highlighting portfolio, company information, and client engagement.",
+    technologies: ["Next.js", "TailwindCSS", "React"],
+    deliverables: ["Portfolio Showcase", "Company Profile", "Interactive UI/UX Design", "Responsive Web Design"],
+    screenshots: [
+      { id: "s01", title: "Projects", url: "/public/images/sparkpair/screenshot_1.png" },
+      { id: "s02", title: "Bio", url: "/public/images/sparkpair/screenshot_2.png" },
+      { id: "s03", title: "Footer", url: "/public/images/sparkpair/screenshot_3.png" },
+    ],
+    video: "",
+    image: "/public/images/sparkpair/sparkpair.png",
     link: "#"
   },
   {
     id: "02",
-    title: "EcoTrack Dashboard",
-    description: "Real-time environmental monitoring dashboard for smart cities. Visualizes air quality and traffic patterns.",
-    technologies: ["TypeScript", "D3.js", "Redis"],
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
+    title: "GarmentsOS PRO",
+    caseStudyDetail: "A full-featured ERP for garment factories, streamlining production, inventory, billing, and workforce management with real-time insights.",
+    description: "An enterprise ERP platform for garment factories, integrating inventory, production, billing, and workforce management to optimize operational efficiency.",
+    technologies: ["PHP", "Laravel", "SQLite 3"],
+    deliverables: ["ERP System Architecture", "Inventory & Stock Management Modules", "Billing & Invoicing Dashboard", "AI-Powered Production Insights", "UI/UX Design for Factory Workflow"],
+    screenshots: [
+      { id: "s01", title: "Menu", url: "/public/images/garmentsos-pro/screenshot_1.png" },
+      { id: "s02", title: "Showcase", url: "/public/images/garmentsos-pro/screenshot_2.png" },
+      { id: "s03", title: "Form", url: "/public/images/garmentsos-pro/screenshot_3.png" }
+    ],
+    video: "https://66d826c261a09e6dd86411f9--voluble-concha-c3ad1a.netlify.app/mtc-showreel.mp4",
+    image: "/public/images/garmentsos-pro/garmentsos-pro.png",
     link: "#"
   },
   {
     id: "03",
-    title: "FinFlow SaaS",
-    description: "Comprehensive financial management system for small businesses, featuring automated invoicing.",
-    technologies: ["React", "AWS Lambda", "Stripe"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+    title: "TexTradeOS",
+    caseStudyDetail: "A SaaS platform for garment wholesalers, offering multi-client management, cloud-based order tracking, and analytics dashboards.",
+    description: "Cloud-based sales management software for garment wholesalers, enabling seamless order management, client tracking, and performance reporting from anywhere.",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node JS"],
+    deliverables: ["SaaS Multi-Tenant Architecture", "Order Management Modules", "Client & Sales Analytics Dashboard", "Responsive UI/UX Design"],
+    screenshots: [
+      { id: "s01", title: "Menu", url: "/public/images/textradeos/screenshot_1.png" },
+      { id: "s02", title: "Form", url: "/public/images/textradeos/screenshot_2.png" },
+      { id: "s02", title: "Subscription Deimage", url: "/public/images/textradeos/screenshot_3.png" }
+    ],
+    video: "",
+    image: "/public/images/textradeos/textradeos.png",
     link: "#"
   },
   {
     id: "04",
-    title: "Nexus Cloud",
-    description: "Automated cloud provisioning tool for managing multi-region AWS environments via Terraform.",
-    technologies: ["Terraform", "Go", "AWS"],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
+    title: "Nova Invoice",
+    caseStudyDetail: "A SaaS-based invoice manager integrated with FBR, automating billing and tax compliance for businesses.",
+    description: "Cloud invoicing platform fully integrated with FBR, providing automated billing, taxation compliance, and reporting tools for small and medium businesses.",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node JS"],
+    deliverables: ["SaaS Architecture", "Automated Invoicing & FBR Integration", "Reporting & Analytics Modules", "Responsive UI/UX Design"],
+    screenshots: [
+      { id: "s01", title: "Showcase", url: "/public/images/novainvoice/screenshot_1.png" },
+      { id: "s02", title: "Customize", url: "/public/images/novainvoice/screenshot_2.png" },
+      { id: "s03", title: "Bulk Upvideo", url: "/public/images/novainvoice/screenshot_3.png" }
+    ],
+    video: "",
+    image: "/public/images/novainvoice/novainvoice.png",
     link: "#"
   },
   {
     id: "05",
-    title: "Aura Social",
-    description: "Privacy-focused social network designed to improve digital well-being and community interaction.",
-    technologies: ["Next.js", "Firebase", "Node.js"],
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200",
+    title: "GarmentsOS",
+    caseStudyDetail: "A lightweight business management system for garment factories, handling inventory, orders, and basic reporting.",
+    description: "A simplified, easy-to-use platform for small-to-medium garment businesses, focused on inventory and order management.",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node JS"],
+    deliverables: ["Inventory Module", "Order Tracking", "Basic Reporting", "UI/UX Design for Small Factories"],
+    screenshots: [
+      { id: "s01", title: "Form", url: "/public/images/garmentsos/screenshot_1.png" },
+      { id: "s02", title: "Details", url: "/public/images/garmentsos/screenshot_2.png" },
+      { id: "s03", title: "Customize", url: "/public/images/garmentsos/screenshot_3.png" },
+      { id: "s04", title: "System Envideo", url: "/public/images/garmentsos/screenshot_4.png" },
+      { id: "s05", title: "Profile/Sevideo", url: "/public/images/garmentsos/screenshot_5.png" }
+    ],
+    video: "",
+    image: "/public/images/garmentsos/garmentsos.png",
     link: "#"
   },
   {
     id: "06",
-    title: "Lumina Vision",
-    description: "Computer vision application for identifying manufacturing defects in real-time.",
-    technologies: ["Python", "TensorFlow", "OpenCV"],
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
+    title: "EduSaaS",
+    caseStudyDetail: "A SaaS-based school management system enabling institutions to manage students, attendance, and academic reports, with QR-based parent access.",
+    description: "A cloud-based platform for schools to manage student records, attendance tracking, and exam results. Parents can scan a QR code on the student ID card to securely view attendance history and academic performance in real time.",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node JS"],
+    deliverables: [
+      "SaaS Multi-Tenant School Architecture",
+      "Student & Parent Management System",
+      "QR-Based Attendance Verification",
+      "Exam & Report Card Management",
+      "Parent Access Portal",
+      "Responsive UI/UX Design"
+    ],
+    screenshots: [
+      { id: "s01", title: "Form", url: "/public/images/edusaas/screenshot_1.png" },
+      { id: "s02", title: "Details", url: "/public/images/edusaas/screenshot_2.png" },
+      { id: "s03", title: "Attendance", url: "/public/images/edusaas/screenshot_3.png" },
+      { id: "s04", title: "Exams", url: "/public/images/edusaas/screenshot_4.png" },
+    ],
+    video: "",
+    image: "/public/images/edusaas/edusaas.png",
     link: "#"
   },
   {
     id: "07",
-    title: "Vortex Gaming",
-    description: "Tournament management platform for esports communities with real-time updates.",
-    technologies: ["Socket.io", "MongoDB", "React"],
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1200",
+    title: "EmbroideryOS",
+    caseStudyDetail: "A SaaS ERP system for embroidery businesses, managing orders, production, and machine utilization in the cloud.",
+    description: "Cloud-based business management system for embroidery workshops, allowing remote order management, production scheduling, and machine monitoring.",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node JS"],
+    deliverables: ["SaaS Multi-Tenant Architecture", "Order & Production Management", "Machine Utilization Dashboard", "UI/UX Design for Cloud Platform"],
+    screenshots: [
+      { id: "s01", title: "Showcase", url: "/public/images/embroideryos/screenshot_1.png" },
+      { id: "s02", title: "Form", url: "/public/images/embroideryos/screenshot_2.png" },
+      { id: "s03", title: "Details", url: "/public/images/embroideryos/screenshot_3.png" },
+      { id: "s04", title: "System Invideo", url: "/public/images/embroideryos/screenshot_4.png" },
+    ],
+    video: "",
+    image: "/public/images/embroideryos/embroideryos.png",
     link: "#"
-  }
+  },
+  {
+    id: "08",
+    title: "Ad-Duha Manager",
+    caseStudyDetail: "A comprehensive studio management system designed for photography, videography, and live streaming businesses, handling bookings, events, and client operations.",
+    description: "A production-focused management platform built for media studios to manage event bookings, client records, shoot schedules, payments, and live streaming operations. Designed for streamlined workflows and efficient coordination across creative teams.",
+    technologies: ["SQLite 3", "Prisma", "Next.js"],
+    deliverables: [
+      "Event & Booking Management System",
+      "Client & Contract Management",
+      "Shoot Scheduling & Team Coordination",
+      "Invoice & Payment Tracking",
+      "Studio Workflow Dashboard",
+      "Responsive UI/UX Design"
+    ],
+    screenshots: [
+      { id: "s01", title: "Showcase", url: "/public/images/ad-duha/screenshot_1.png" },
+      { id: "s02", title: "Confirmation", url: "/public/images/ad-duha/screenshot_2.png" },
+      { id: "s03", title: "Details", url: "/public/images/ad-duha/screenshot_3.png" },
+      { id: "s04", title: "Form", url: "/public/images/ad-duha/screenshot_4.png" },
+    ],
+    video: "",
+    image: "/public/images/ad-duha/ad-duha.png",
+    link: "#"
+  },
+  {
+    id: "09",
+    title: "AquaFlow",
+    caseStudyDetail: "A water supply business management platform handling operations, billing, and customer management.",
+    description: "A dedicated platform for water supply companies to manage distribution, billing, and customer service efficiently.",
+    technologies: ["SQLite 3", "Prisma", "NEXT.JS"],
+    deliverables: ["Billing & Payment Modules", "Customer Management", "Operations Dashboard", "UI/UX Design for Water Supply Operations"],
+    screenshots: [
+      { id: "s01", title: "Showcase", url: "/public/images/aquaflow/screenshot_1.png" },
+      { id: "s02", title: "Showcase", url: "/public/images/aquaflow/screenshot_2.png" },
+      { id: "s03", title: "Form", url: "/public/images/aquaflow/screenshot_3.png" },
+    ],
+    video: "",
+    image: "/public/images/aquaflow/aquaflow.png",
+    link: "#"
+  },
+  {
+    id: "10",
+    title: "Sidcup Family Golf",
+    caseStudyDetail: "A clone of a golf website for a family-owned club, showcasing schedules, events, and membership info.",
+    description: "A recreation of a golf club website with interactive scheduling, event management, and member information features.",
+    technologies: ["Next.js", "React", "TailwindCSS"],
+    deliverables: ["Interactive Event Schedule", "Membership Management UI", "Responsive Web Design", "UI/UX Design"],
+    screenshots: [
+      { id: "s01", title: "Cards", url: "/public/images/sidcup-family-golf/screenshot_1.png" },
+      { id: "s02", title: "Marquee", url: "/public/images/sidcup-family-golf/screenshot_2.png" },
+      { id: "s03", title: "Footer", url: "/public/images/sidcup-family-golf/screenshot_3.png" },
+    ],
+    video: "",
+    image: "/public/images/sidcup-family-golf/sidcup-family-golf.png",
+    link: "#"
+  },
+  {
+    id: "11",
+    title: "Equilibrium",
+    caseStudyDetail: "A site clone showcasing design, layout, and interactive elements for demonstration purposes.",
+    description: "A cloned website project demonstrating design fidelity, layout replication, and interactive features implementation.",
+    technologies: ["Next.js", "React", "TailwindCSS"],
+    deliverables: ["Full UI Clone", "Interactive Components", "Responsive Design", "Animations & Transitions"],
+    screenshots: [
+      { id: "s01", title: "Showcase", url: "/public/images/equilibrium/screenshot_1.png" },
+      { id: "s02", title: "Showcase", url: "/public/images/equilibrium/screenshot_2.png" },
+      { id: "s03", title: "Showcase", url: "/public/images/equilibrium/screenshot_3.png" },
+    ],
+    video: "",
+    image: "/public/images/equilibrium/equilibrium.png",
+    link: "#"
+  },
 ];
 
-export const EXPERIENCES: Experience[] = [
-  {
-    company: "SparkPair",
-    role: "Founder & Full Stack Engineer",
-    period: "2024 - Present",
-  },
-  {
-    company: "The Creative Hub",
-    role: "Full Stack Developer",
-    period: "2023 - 2025",
-  },
-];
+export const EXPERIENCES: Experience[] = JSON.parse(
+  import.meta.env.VITE_EXPERIENCES || "[]"
+);
+
+export const EMAIL_CONFIG = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+};

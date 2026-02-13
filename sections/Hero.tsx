@@ -89,7 +89,7 @@ export const Hero = () => {
 
       {/* 4. LAYER: Subtitle - Changed text-zinc-500 to 400 for better contrast */}
       <p className="relative z-20 text-[11px] font-black tracking-[0.5em] uppercase text-zinc-400 mb-8 select-none">
-        Full Stack Engineer & Interface Designer
+        {PERSONAL_INFO.role}
       </p>
 
       {/* 5. LAYER: THE MAGNETIC NAME */}
@@ -109,12 +109,12 @@ export const Hero = () => {
       >
         <div className="pt-4 -mt-4">
           <span className="block animate-in slide-in-from-bottom-full duration-1000 ease-out">
-            Muhammad
+            {PERSONAL_INFO.firstName}
           </span>
         </div>
         <div className="">
           <span className="block animate-in slide-in-from-bottom-full duration-1000 delay-150 ease-out">
-            Hassan
+            {PERSONAL_INFO.lastName}
           </span>
         </div>
       </h1>

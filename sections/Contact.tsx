@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { PERSONAL_INFO } from '../constants';
+import { EMAIL_CONFIG, PERSONAL_INFO } from '../constants';
 
 export const ContactSection = () => {
   const form = useRef(); // Create a reference to the form
@@ -25,17 +25,12 @@ export const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Replace these three strings with your actual EmailJS credentials
-    const SERVICE_ID = "service_cs5t4rw";
-    const TEMPLATE_ID = "template_tcwp0qd";
-    const PUBLIC_KEY = "DA2bCwlGFNetx3R5i";
-
     try {
       await emailjs.sendForm(
-        SERVICE_ID, 
-        TEMPLATE_ID, 
-        form.current, 
-        PUBLIC_KEY
+        EMAIL_CONFIG.serviceId,
+        EMAIL_CONFIG.templateId,
+        form.current,
+        EMAIL_CONFIG.publicKey
       );
       
       setIsSent(true);

@@ -1,11 +1,18 @@
-
 export interface Project {
   id: string;
   title: string;
+  caseStudyDetail?: string; // Project-specific line
   description: string;
   technologies: string[];
-  link?: string;
-  image: string;
+  deliverables?: string[];
+  screenshots?: {
+    id: string;
+    title: string;
+    url: string;
+  }[];
+  video?: string;
+  image: string; // main thumbnail
+  link?: string; // project page
 }
 
 export interface Experience {

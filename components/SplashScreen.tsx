@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { PERSONAL_INFO } from '../constants';
 
 export const SplashScreen: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
@@ -36,7 +37,7 @@ export const SplashScreen: React.FC<{ onComplete: () => void }> = ({ onComplete 
         {/* Initials / Brand */}
         <div className="overflow-hidden">
           <h2 className="text-white text-9xl md:text-[12rem] font-condensed uppercase tracking-tighter leading-none animate-in slide-in-from-bottom-full duration-1000">
-            MH<span className="text-zinc-800">.</span>
+            {PERSONAL_INFO.firstName[0] + PERSONAL_INFO.lastName[0]}<span className="text-zinc-800">.</span>
           </h2>
         </div>
 
@@ -58,7 +59,7 @@ export const SplashScreen: React.FC<{ onComplete: () => void }> = ({ onComplete 
 
       {/* Decorative Elements */}
       <div className="absolute bottom-12 left-12 text-[10px] font-black tracking-widest text-zinc-700 uppercase hidden md:block">
-        Full Stack Engineer
+        {PERSONAL_INFO.role}
       </div>
       <div className="absolute bottom-12 right-12 text-[10px] font-black tracking-widest text-zinc-700 uppercase hidden md:block">
         Portfolio v3.0

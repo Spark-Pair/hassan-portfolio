@@ -273,6 +273,8 @@ const ProjectOverlay = ({ project, onClose }) => {
   // Adjust "-80%" based on total width of your screenshot track
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   return (
     <motion.div 
       ref={overlayContainerRef}
@@ -333,12 +335,12 @@ const ProjectOverlay = ({ project, onClose }) => {
           <div className="md:col-span-4 space-y-12">
               <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
                   <h4 className="text-indigo-500 text-[10px] font-black uppercase tracking-widest mb-4 italic">// The Objective</h4>
-                  <p className="text-zinc-400 leading-relaxed text-sm uppercase tracking-wider">{project.description}</p>
+                  <p className="text-zinc-400 leading-relaxed text-sm tracking-wider">{project.description}</p>
               </motion.section>
               <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
                   <h4 className="text-zinc-600 text-[10px] font-black uppercase tracking-widest mb-4 italic">// Deliverables</h4>
                   <ul className="text-white space-y-2 text-sm font-bold uppercase">
-                      {['UI/UX Design', 'Technical Architecture', 'Motion Graphics'].map(item => (
+                      {project.deliverables.map(item => (
                           <li key={item} className="flex items-center gap-2">
                               <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full" /> {item}
                           </li>
@@ -378,8 +380,8 @@ const ProjectOverlay = ({ project, onClose }) => {
             </motion.h2>
             
             <div className="relative w-[90vw] h-[75vh] md:w-[80vw] md:h-[80vh]">
-              {(project.screenshots || [project.image, project.image, project.image]).map((img, idx) => {
-                const step = 1 / (project.screenshots?.length || 3);
+              {(project.screenshots).map((screenshot, idx) => {
+                const step = 1 / (project.screenshots?.length);
                 const start = idx * step;
                 const end = (idx + 1) * step;
 
@@ -408,7 +410,7 @@ const ProjectOverlay = ({ project, onClose }) => {
                       {/* The Image */}
                       <motion.img 
                         style={{ y: imgY, scale: 1.1 }}
-                        src={img} 
+                        src={screenshot.url} 
                         className="w-full h-full object-cover opacity-80" 
                         alt="" 
                       />
@@ -437,7 +439,7 @@ const ProjectOverlay = ({ project, onClose }) => {
                                 style={{ y: useTransform(scrollYProgress, [start + step * 0.1, start + step * 0.3], [100, 0]) }}
                                 className="text-4xl md:text-6xl font-condensed uppercase text-white tracking-tighter"
                               >
-                                {idx === 0 ? "Interface" : idx === 1 ? "Architecture" : "Experience"}
+                                {screenshot.title}
                               </motion.h3>
                           </div>
                           
@@ -493,17 +495,18 @@ const ProjectOverlay = ({ project, onClose }) => {
             >
               {project.video ? (
                 <div className="w-full h-full relative group">
-                  {/* Custom Video Playback UI instead of default controls */}
-                  <video 
-                    autoPlay 
-                    muted 
-                    loop 
+                  <video
+                    ref={videoRef}
+                    muted
+                    loop
                     playsInline
                     className="w-full h-full object-cover brightness-50 group-hover:brightness-100 transition-all duration-1000"
+                    onMouseEnter={() => videoRef.current?.play()}
+                    onMouseLeave={() => videoRef.current?.pause()}
                   >
                     <source src={project.video} type="video/mp4" />
                   </video>
-                  
+
                   {/* Overlay Play Indicator */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="w-20 h-20 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-sm group-hover:scale-150 group-hover:opacity-0 transition-all duration-700">

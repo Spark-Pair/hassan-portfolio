@@ -1,3 +1,4 @@
+import Lenis from '@studio-freight/lenis';
 import React, { useRef, useEffect, useState } from 'react';
 import { PERSONAL_INFO, SKILLS, EXPERIENCES } from '../constants';
 
@@ -5,6 +6,34 @@ export const AboutSection = () => {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
   const [headerStyle, setHeaderStyle] = useState({ x: 0, y: 0, rotateX: 0, rotateY: 0 });
   const headerRef = useRef(null);
+
+  const aboutContainerRef = useRef<HTMLDivElement | null>(null);
+  const aboutContentRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!aboutContainerRef.current || !aboutContentRef.current) return;
+
+    const lenis = new Lenis({
+      wrapper: aboutContainerRef.current,
+      content: aboutContentRef.current,
+      duration: 1.2,
+      smoothWheel: true,
+    });
+
+    let rafId: number;
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -42,7 +71,11 @@ export const AboutSection = () => {
   };
 
   return (
-    <div onMouseMove={handleMouseMove} className="w-full h-full bg-black text-white overflow-y-auto custom-scroll perspective-2000 relative">
+    <div
+      ref={aboutContainerRef}
+      onMouseMove={handleMouseMove}
+      className="ww-full h-screen bg-black text-white overflow-hidden no-scrollbar perspective-2000 relative"
+    >
       
       {/* Background Interactive Spotlight */}
       <div 
@@ -52,7 +85,7 @@ export const AboutSection = () => {
         }}
       />
 
-      <div className="max-w-[1400px] mx-auto px-10 md:px-20 py-40 relative z-10">
+      <div ref={aboutContentRef} className="max-w-[1400px] mx-auto px-10 md:px-20 py-40 relative z-10">
         
         {/* Editorial Header */}
         <div className="flex flex-col lg:flex-row gap-20 mb-40">
@@ -90,7 +123,7 @@ export const AboutSection = () => {
 
             <div className="grid grid-cols-2 gap-10">
               {[
-                { val: PERSONAL_INFO.experience, label: "Years Active" },
+                { val: PERSONAL_INFO.experience+"+", label: "Years Active" },
                 { val: PERSONAL_INFO.uptime_mentality, label: "Uptime Mentality" }
               ].map((stat, i) => (
                 <div key={i} className="expand-cursor group cursor-default relative py-2">
@@ -203,7 +236,7 @@ export const AboutSection = () => {
 
         {/* Bottom Decoration */}
         <div className="mt-40 pt-20 border-t border-white/5 flex flex-col items-center">
-          <p className="text-[10px] font-black tracking-[0.5em] uppercase text-zinc-800">Muhammad Hassan — Full Stack Engineer</p>
+          <p className="text-[10px] font-black tracking-[0.5em] uppercase text-zinc-800">{PERSONAL_INFO.name} — {PERSONAL_INFO.shortRole}</p>
         </div>
       </div>
     </div>
