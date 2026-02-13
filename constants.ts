@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
       { id: "s02", title: "Details", url: "/images/garmentsos/screenshot_2.png" },
       { id: "s03", title: "Customize", url: "/images/garmentsos/screenshot_3.png" },
       { id: "s04", title: "System Envideo", url: "/images/garmentsos/screenshot_4.png" },
-      { id: "s05", title: "Profile/Sevideo", url: "/images/garmentsos/screenshot_5.png" }
+      { id: "s05", title: "Profile/Settings", url: "/images/garmentsos/screenshot_5.png" }
     ],
     video: "",
     image: "/images/garmentsos/garmentsos.png",
@@ -180,13 +180,13 @@ export const PROJECTS: Project[] = [
       "Responsive UI/UX Design"
     ],
     screenshots: [
-      { id: "s01", title: "Showcase", url: "/images/ad-duha/screenshot_1.png" },
-      { id: "s02", title: "Confirmation", url: "/images/ad-duha/screenshot_2.png" },
-      { id: "s03", title: "Details", url: "/images/ad-duha/screenshot_3.png" },
-      { id: "s04", title: "Form", url: "/images/ad-duha/screenshot_4.png" },
+      { id: "s01", title: "Showcase", url: "/images/ad-duha/screenshot_1.webp" },
+      { id: "s02", title: "Confirmation", url: "/images/ad-duha/screenshot_2.webp" },
+      { id: "s03", title: "Details", url: "/images/ad-duha/screenshot_3.webp" },
+      { id: "s04", title: "Form", url: "/images/ad-duha/screenshot_4.webp" },
     ],
     video: "",
-    image: "/images/ad-duha/ad-duha.png",
+    image: "/images/ad-duha/ad-duha.webp",
     link: "#"
   },
   {
