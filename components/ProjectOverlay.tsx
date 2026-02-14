@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
-import { MagneticButton } from '@/components/MagneticButton';
+import { MagneticButton } from '@/components/buttons/MagneticButton';
 import { ProjectGallery } from '@/components/ProjectGallery';
 
 export const ProjectOverlay = ({ project, onClose }) => {

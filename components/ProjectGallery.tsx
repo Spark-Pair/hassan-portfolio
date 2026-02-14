@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MagneticButton } from './MagneticButton';
+import { MagneticButton } from '@/components/buttons/MagneticButton';
 
 // 1. Define Overlay Variants for the background slide
 const overlayVariants = {

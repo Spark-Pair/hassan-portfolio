@@ -89,13 +89,14 @@ export const Hero = () => {
       <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,black_95%)]" />
 
       {/* 4. LAYER: Subtitle - Changed text-zinc-500 to 400 for better contrast */}
-      <p className="relative z-20 text-[11px] font-black tracking-[0.5em] uppercase text-zinc-400 mb-8 select-none">
-        {PERSONAL_INFO.role}
+      <p className="relative z-20 font-black tracking-[0.5em] uppercase text-zinc-400 mb-8 select-none text-center">
+        <span className="max-sm:hidden text-[11px]">{PERSONAL_INFO.role}</span>
+        <span className="sm:hidden text-[0.6rem]">{PERSONAL_INFO.shortRole}</span>
       </p>
 
       {/* 5. LAYER: THE MAGNETIC NAME */}
       <h1 
-        className="expand-cursor relative z-30 text-[10rem] md:text-[13rem] font-condensed uppercase leading-[0.85] mb-14 select-none tracking-tighter text-white transition-transform duration-500 ease-out text-center"
+        className="expand-cursor relative z-30 text-[20vw] md:text-[13rem] font-condensed uppercase leading-[0.85] mb-14 select-none tracking-tighter text-white transition-transform duration-500 ease-out text-center"
         style={{ 
           transform: `
             translateX(${nameStyle.translateX}px) 
@@ -141,6 +142,14 @@ export const Hero = () => {
       {/* Decorative Accents - Increased opacity to white/10 */}
       <div className="absolute top-0 left-1/4 w-px h-full bg-white/10 -z-10"></div>
       <div className="absolute top-0 right-1/4 w-px h-full bg-white/10 -z-10"></div>
+
+      {/* <div className="w-24 py-8 bg-red-500 absolute top-1/2 left-1/2 z-[999] flex flex-col items-center justify-center">
+        <div className="hidden xl:block">xl</div>
+        <div className="hidden lg:block">lg</div>
+        <div className="hidden md:block">md</div>
+        <div className="hidden sm:block">sm</div>
+        <div className="hidden xs:block">xs</div>
+      </div> */}
     </div>
   );
 };
