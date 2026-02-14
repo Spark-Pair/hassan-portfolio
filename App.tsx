@@ -8,6 +8,7 @@ import { ProjectsSection } from './sections/Projects';
 import { SplashScreen } from './components/SplashScreen';
 import { CustomCursor } from './components/CustomCursor';
 import { ShowReel } from './components/ShowReel';
+import { CollapsedNavbar } from './components/CollapsedNavbar';
 
 export default function App() {
   const [isAppLoaded, setIsAppLoaded] = useState(false);
@@ -21,6 +22,8 @@ export default function App() {
   // The logic for our transition "orchestrator"
   const handleNavigation = (path: string) => {
     if (location.pathname === path || animationStage !== 'idle') return;
+    console.log("hello");
+    
 
     // Phase 1: Exit current page
     setAnimationStage('exit');
@@ -66,6 +69,11 @@ export default function App() {
         <>
           <Navbar 
             currentPath={location.pathname} 
+            onNavigate={handleNavigation}
+            onToggleShowReel={() => setIsShowReelOpen(true)}
+          />
+
+          <CollapsedNavbar
             onNavigate={handleNavigation}
             onToggleShowReel={() => setIsShowReelOpen(true)}
           />

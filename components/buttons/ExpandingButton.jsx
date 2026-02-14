@@ -5,7 +5,7 @@ export const ExpandingButton = ({ label, icon, onclick={}, className = "", ...pr
     initial="initial"
     whileHover="hover"
     whileTap={{ scale: 0.96 }}
-    onclick={onclick}
+    onClick={onclick}
     className="relative gap-4 group cursor-pointer pointer-events-auto bg-black/40 backdrop-blur-xl border border-white/10 p-[1.1em] pl-[1.4em] pr-[3.8em] rounded-full shadow-2xl overflow-hidden flex items-center hide-cursor"
     {...props}
   >

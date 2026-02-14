@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onToggl
   };
 
   return (
-    <div className="fixed bottom-10 left-10 right-10 z-50 flex items-center justify-between pointer-events-none">
+    <div className="fixed bottom-10 left-10 right-10 z-50 flex items-center justify-between pointer-events-none max-md:hidden">
       <div className="flex items-center gap-2 pointer-events-auto">
         
         {/* SparkPair Link with Tooltip */}

@@ -35,7 +35,7 @@ export const Hero = () => {
     <div 
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="w-full h-screen flex flex-col items-center justify-center relative px-6 overflow-hidden bg-black text-white perspective-1000"
+      className="w-full h-screen flex flex-col items-center justify-center relative px-6 overflow-hidden bg-black text-white perspective-1000 pb-14 md:pb-0"
     >
       <BackgroundCanvas />
 
@@ -89,14 +89,14 @@ export const Hero = () => {
       <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,black_95%)]" />
 
       {/* 4. LAYER: Subtitle - Changed text-zinc-500 to 400 for better contrast */}
-      <p className="relative z-20 font-black tracking-[0.5em] uppercase text-zinc-400 mb-8 select-none text-center">
-        <span className="max-sm:hidden text-[11px]">{PERSONAL_INFO.role}</span>
-        <span className="sm:hidden text-[0.6rem]">{PERSONAL_INFO.shortRole}</span>
+      <p className="relative z-20 font-black tracking-[0.5em] uppercase text-zinc-400 mb-6 select-none text-center">
+        <span className="max-md:hidden text-[11px]">{PERSONAL_INFO.role}</span>
+        <span className="md:hidden text-[0.6rem]">{PERSONAL_INFO.shortRole}</span>
       </p>
 
       {/* 5. LAYER: THE MAGNETIC NAME */}
       <h1 
-        className="expand-cursor relative z-30 text-[20vw] md:text-[13rem] font-condensed uppercase leading-[0.85] mb-14 select-none tracking-tighter text-white transition-transform duration-500 ease-out text-center"
+        className="expand-cursor relative z-30 text-[24vw] md:text-[13rem] font-condensed uppercase leading-[0.85] mb-[3vw] md:mb-14 select-none tracking-tighter text-white transition-transform duration-500 ease-out text-center"
         style={{ 
           transform: `
             translateX(${nameStyle.translateX}px) 
@@ -109,7 +109,7 @@ export const Hero = () => {
           textShadow: '0 20px 50px rgba(0,0,0,0.5)'
         }}
       >
-        <div className="pt-4 -mt-4">
+        <div className="-mt-4">
           <span className="block animate-in slide-in-from-bottom-full duration-1000 ease-out">
             {PERSONAL_INFO.firstName}
           </span>
