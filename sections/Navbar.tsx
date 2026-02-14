@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { correctBorderRadius, motion } from 'framer-motion';
+import { PERSONAL_INFO } from '../constants';
+import { ExpandingButton } from '@/components/buttons/ExpandingButton';
+import { LinkButton } from '@/components/buttons/LinkButton.';
 
 interface NavbarProps {
   currentPath: string; // Changed from currentSection
@@ -44,21 +46,29 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onToggl
     };
   }, [currentPath]);
 
+  const onDownload = () => {
+    const link = document.createElement("a");
+    link.href = `/file/${PERSONAL_INFO.resumeFileName}`;
+    link.download = "Hassan-Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="fixed bottom-10 left-10 right-10 z-50 flex items-center justify-between pointer-events-none">
       <div className="flex items-center gap-2 pointer-events-auto">
         
         {/* SparkPair Link with Tooltip */}
         <div className="relative group/tooltip">
-          <a 
+          <LinkButton
+            size="sm"
             href="https://sparkpair.dev" 
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
-            className="hide-cursor flex group items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-white/5 backdrop-blur-md hover:text-black transition-all duration-500 text-white"
-          >
-            <div className="absolute inset-0 bg-white scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full" />
-            <i className="fa-solid fa-bolt text-lg relative z-10 group-hover:text-black"></i>
-          </a>
+            icon="fa-solid fa-bolt"
+            borderVariant="light"
+          />
           
           <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 px-3 py-1.5 bg-white text-black text-[9px] font-black tracking-widest uppercase rounded 
                           opacity-0 translate-y-2 scale-95
@@ -102,63 +112,17 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onToggl
         </div>
       </div>
 
-      {/* Showreel Button */}
-      {/* <div className="flex items-center">
-        <motion.div 
-          onClick={onToggleShowReel} // Use the prop here
-          className="flex items-center gap-4 group cursor-pointer pointer-events-auto bg-black/40 backdrop-blur-xl border border-white/10 p-1.5 rounded-full shadow-2xl pl-6 pr-2 hover:border-white/30 transition-all active:scale-95"
-        >
-          <span className="text-[10px] font-black tracking-[0.2em] uppercase text-zinc-500 group-hover:text-white transition-colors">
-            Showreel
-          </span>
-          <div className="w-10 h-10 rounded-full flex items-center justify-center transition-all bg-white/10 text-zinc-500 group-hover:bg-white group-hover:text-black">
-            <i className="fa-solid fa-play text-[10px]"></i>
-          </div>
-        </motion.div>
-      </div> */}
-        <motion.div 
-          onClick={onToggleShowReel}
-          initial="initial"
-          whileHover="hover"
-          whileTap={{ scale: 0.96 }}
-          className="relative gap-4 group cursor-pointer pointer-events-auto bg-black/40 backdrop-blur-xl border border-white/10 p-[1.1em] pl-[1.4em] pr-[3.8em] rounded-full shadow-2xl overflow-hidden flex items-center hide-cursor"
-        >
-          <motion.div 
-            variants={{
-              initial: { width: "40px", height: "40px", backgroundColor: "rgba(255, 255, 255, 0.1)" },
-              hover: { 
-                width: "100%", 
-                height: "100%",
-                right: 0,
-                backgroundColor: "rgba(255, 255, 255, 1)",
-                transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] }
-              }
-            }}
-            className="absolute right-[6px] rounded-full z-0 flex items-center justify-center"
-          >
-            <motion.i 
-              variants={{
-                initial: { color: "#71717a", scale: 1 }, // zinc-500
-                hover: { color: "#000000", scale: 1.2 }
-              }}
-              className="fa-solid fa-play text-[10px] relative z-20"
-            />
-          </motion.div>
-
-          <motion.span 
-            variants={{
-              initial: { opacity: 1},
-              hover: { 
-                opacity: 0, 
-                x: -60,
-                transition: { duration: 0.3 } 
-              }
-            }}
-            className="text-[10px] font-black tracking-[0.2em] uppercase text-zinc-500 pointer-events-none"
-          >
-            Showreel
-          </motion.span>
-        </motion.div>
+      {/* Showreel and Resume Buttons */}
+      <div className="flex items-center gap-3">
+        {[{label: "Resume", icon: "fa-solid fa-download", onclick: onDownload}, {label: "ShowReel", icon: "fa-solid fa-play", onclick: onToggleShowReel}].map((buttonData, index) => (
+          <ExpandingButton
+            key={index}
+            label={buttonData.label}
+            icon={buttonData.icon}
+            onClick={buttonData.onclick}
+          />
+        ))}
+      </div>
     </div>
   );
 };

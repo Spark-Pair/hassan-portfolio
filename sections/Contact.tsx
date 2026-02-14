@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { EMAIL_CONFIG, PERSONAL_INFO } from '../constants';
+import { LinkButton } from '@/components/buttons/LinkButton.';
 
 export const ContactSection = () => {
   const form = useRef(); // Create a reference to the form
@@ -170,20 +171,18 @@ export const ContactSection = () => {
               <h3 className="text-[10px] font-black tracking-widest uppercase opacity-40">Digital Spaces</h3>
               <div className="relative z-20 flex items-center gap-3 pointer-events-auto">
                 {[
-                  { icon: 'fa-linkedin-in', link: PERSONAL_INFO.linkedin },
-                  { icon: 'fa-github', link: PERSONAL_INFO.github },
-                  { icon: 'fa-instagram', link: PERSONAL_INFO.instagram }
+                  { icon: 'fa-brands fa-linkedin-in', link: PERSONAL_INFO.linkedin },
+                  { icon: 'fa-brands fa-github', link: PERSONAL_INFO.github },
+                  { icon: 'fa-brands fa-instagram', link: PERSONAL_INFO.instagram }
                 ].map((item, i) => (
-                  <a 
+                  <LinkButton
                     key={i}
+                    size="sm"
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hide-cursor group relative w-12 h-12 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 hover:scale-110 hover:border-white/60 overflow-hidden bg-white/5"
-                  >
-                    <div className="absolute inset-0 bg-white scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full" />
-                    <i className={`fa-brands ${item.icon} text-md relative z-10 transition-colors duration-500 group-hover:text-black text-white`}></i>
-                  </a>
+                    icon={item.icon}
+                  />
                 ))}
               </div>
             </div>
