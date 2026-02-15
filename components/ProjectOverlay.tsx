@@ -69,12 +69,12 @@ export const ProjectOverlay = ({ project, onClose }) => {
         {/* WRAPPER FOR LENIS CONTENT - This div is crucial for Lenis to calculate height */}
         <div>
           {/* Vertical "Scroll" Text Decor */}
-          <div className="fixed z-[20] right-10 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 opacity-20 pointer-events-none">
+          <div className="fixed z-[20] right-4 md:right-10 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 opacity-20 pointer-events-none">
             <span className="text-[10px] font-black uppercase tracking-[0.5em] [writing-mode:vertical-lr]">Scroll</span>
             <div className="w-[1px] h-20 bg-white" />
           </div>
 
-          <div className="fixed top-0 left-0 w-full p-10 flex justify-between items-center z-50">
+          <div className="fixed top-0 left-0 w-full p-4 md:p-10 flex justify-between items-center z-50">
             {/* Back Button */}
             <MagneticButton onClick={onClose}>
               <i className="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform" />
@@ -103,12 +103,12 @@ export const ProjectOverlay = ({ project, onClose }) => {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-zinc-950" />
     
-            <div className="absolute bottom-10 left-10 md:left-20 max-w-4xl">
+            <div className="absolute bottom-10 left-4 md:left-20 w-full max-w-4xl">
               <motion.div
                 initial={{ y: 110, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="hidden md:block text-xs font-black uppercase tracking-[0.5em] mb-3 text-indigo-700 ms-2"
+                className="text-xs font-black uppercase tracking-[0.5em] mb-3 text-indigo-700 ms-1 md:ms-2"
               >
                 Case Study // {project.id}
               </motion.div>
@@ -131,7 +131,7 @@ export const ProjectOverlay = ({ project, onClose }) => {
           </div>
           
           {/* 2. SPECS GRID */}
-          <div className="max-w-[1400px] mx-auto px-10 py-24 grid grid-cols-1 md:grid-cols-12 gap-16 border-b border-white/5">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-10 py-24 grid grid-cols-1 md:grid-cols-12 gap-16 border-b border-white/5">
             <div className="md:col-span-4 space-y-12">
                 <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
                     <h4 className="text-indigo-500 text-[10px] font-black uppercase tracking-widest mb-4 italic">// The Objective</h4>
@@ -179,7 +179,7 @@ export const ProjectOverlay = ({ project, onClose }) => {
                 {project.title}
               </motion.h2>
               
-              <div className="relative w-[90vw] h-[75vh] md:w-[80vw] md:h-[80vh]">
+              <div className="relative w-full mx-4 h-[75vh] md:w-[80vw] md:h-[80vh]">
                 {limitedScreenshots.map((screenshot, idx) => {
                   const step = 1 / limitedScreenshots.length;
                   const start = idx * step;
@@ -267,9 +267,9 @@ export const ProjectOverlay = ({ project, onClose }) => {
           </section>
 
           {/* 4. FINAL MEDIA (Video or Live Demo) */}
-          <section className="relative py-60 bg-zinc-950 overflow-hidden">
+          <section className="relative pt-40 bg-zinc-950 overflow-hidden px-4">
             {/* Section Heading with more "Grit" */}
-            <div className="max-w-[1400px] mx-auto px-10 mb-32">
+            <div className="max-w-[1400px] mx-auto md:px-10 mb-12 md:mb-32">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
                 <div className="flex-1">
                   <span className="text-indigo-500 font-mono text-[10px] tracking-[0.8em] uppercase block mb-6">// Deploy_Final</span>
@@ -278,7 +278,7 @@ export const ProjectOverlay = ({ project, onClose }) => {
                   </h2>
                 </div>
                 <div className="flex-1 max-w-sm">
-                  <p className="text-zinc-500 text-xs uppercase leading-relaxed tracking-widest border-l border-white/10 pl-8">
+                  <p className="text-zinc-500 text-xs uppercase leading-relaxed tracking-widest border-l border-white/10 pl-3 md:pl-8">
                     The culmination of visual logic and technical performance, rendered in real-time.
                   </p>
                 </div>

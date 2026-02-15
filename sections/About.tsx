@@ -3,12 +3,20 @@ import React, { useRef, useEffect, useState } from 'react';
 import { PERSONAL_INFO, SKILLS, EXPERIENCES } from '../constants';
 
 export const AboutSection = () => {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
   const [headerStyle, setHeaderStyle] = useState({ x: 0, y: 0, rotateX: 0, rotateY: 0 });
   const headerRef = useRef(null);
 
   const aboutContainerRef = useRef<HTMLDivElement | null>(null);
   const aboutContentRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    setIsTouchDevice(mediaQuery.matches);
+
+    if (mediaQuery.matches) return; // 🚀 Stop everything if touch device
+  }, [])
 
   useEffect(() => {
     if (!aboutContainerRef.current || !aboutContentRef.current) return;
@@ -74,9 +82,8 @@ export const AboutSection = () => {
     <div
       ref={aboutContainerRef}
       onMouseMove={handleMouseMove}
-      className="ww-full h-screen bg-black text-white overflow-hidden no-scrollbar perspective-2000 relative"
+      className={`w-full h-screen bg-black text-white ${!isTouchDevice ? 'overflow-hidden' : ''} no-scrollbar perspective-2000 relative`}
     >
-      
       {/* Background Interactive Spotlight */}
       <div 
         className="fixed inset-0 pointer-events-none opacity-20 transition-opacity duration-1000"
@@ -85,7 +92,7 @@ export const AboutSection = () => {
         }}
       />
 
-      <div ref={aboutContentRef} className="max-w-[1400px] mx-auto px-10 md:px-20 py-40 relative z-10">
+      <div ref={aboutContentRef} className="max-w-[1400px] mx-auto px-4 md:px-20 py-40 relative z-10">
         
         {/* Editorial Header */}
         <div className="flex flex-col lg:flex-row gap-20 mb-40">
@@ -93,7 +100,7 @@ export const AboutSection = () => {
             <p className="text-[10px] font-black tracking-[0.8em] uppercase text-indigo-500 animate-pulse">About / Philosophy</p>
             <h2 
               ref={headerRef}
-              className="expand-cursor text-8xl md:text-[10rem] font-condensed uppercase leading-[0.8] tracking-tighter transition-transform duration-500 ease-out cursor-default"
+              className="expand-cursor text-8xl md:text-[10rem] font-condensed uppercase leading-[0.8] tracking-tighter transition-transform duration-500 ease-out cursor-default select-none"
               style={{ 
                 transform: `translate3d(${headerStyle.x}px, ${headerStyle.y}px, 0) rotateX(${headerStyle.rotateX}deg) rotateY(${headerStyle.rotateY}deg)`,
                 transformStyle: 'preserve-3d'
@@ -121,7 +128,7 @@ export const AboutSection = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-10">
+            <div className="grid grid-cols-2 gap-10 select-none">
               {[
                 { val: PERSONAL_INFO.experience+"+", label: "Years Active" },
                 { val: PERSONAL_INFO.uptime_mentality, label: "Uptime Mentality" }
@@ -145,7 +152,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Center Column: Core Expertise */}
-          <div className="lg:col-span-8 space-y-20">
+          <div className="lg:col-span-8 space-y-20 select-none">
             <div className="space-y-10">
               <h3 className="text-[10px] font-black tracking-widest uppercase text-zinc-600">Stack & Expertise</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

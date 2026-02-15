@@ -16,8 +16,17 @@ export const ProjectsSection = () => {
   const [headerOffset, setHeaderOffset] = useState({ x: 0, y: 0 });
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
 
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    const hasTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    setIsTouchDevice(hasTouch);
+  }, []);
+
   // Handle Infinite Scroll & Magnetic Header
   useEffect(() => {
+    if (isTouchDevice) return;
+
     const container = scrollRef.current;
     const header = headerRef.current;
     if (!container || selectedProject) return; // Pause scroll logic if a project is open
@@ -88,7 +97,7 @@ export const ProjectsSection = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(requestRef.current);
     };
-  }, [selectedProject]);
+  }, [selectedProject, isTouchDevice]);
 
   return (
     <div className="w-full h-screen bg-black text-white overflow-hidden relative flex flex-col justify-center">
@@ -111,8 +120,8 @@ export const ProjectsSection = () => {
         transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         className="w-full h-full flex flex-col justify-center"
       >
-        <div className="w-full mt-12 mb-10 px-10 md:px-20 relative z-10">
-          <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-10">
+        <div className="w-full mt-12 mb-10 px-4 md:px-20 relative z-10">
+          <div className="max-w-[1800px] mx-auto flex flex-col sm:flex-row md:items-end justify-between gap-10">
             <div className="space-y-4">
               <p className="text-[10px] font-black tracking-[0.8em] uppercase text-indigo-500">Case Studies</p>
               <h2 
@@ -184,7 +193,13 @@ export const ProjectsSection = () => {
         </div>
 
         {/* Scroller */}
-        <div ref={scrollRef} className="relative w-full flex overflow-x-hidden no-scrollbar select-none z-10">
+        <div 
+          ref={scrollRef} 
+          className={`
+            relative w-full flex select-none z-10
+            ${isTouchDevice ? 'overflow-x-auto no-scrollbar' : 'overflow-x-hidden'}
+          `}
+        >
           <div className="flex items-center gap-8 py-20 px-10"> 
             {infiniteProjects.map((project, idx) => {
               const isStaggered = idx % 2 === 1;

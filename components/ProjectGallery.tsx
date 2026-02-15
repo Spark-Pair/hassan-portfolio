@@ -52,7 +52,7 @@ export const ProjectGallery = ({ screenshots, onClose }) => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        className="absolute top-0 left-0 w-full p-8 md:p-12 flex justify-between items-center z-50"
+        className="w-full p-4 md:p-12 flex justify-between items-center z-50"
       >
         <div className="flex flex-col gap-1">
           <span className="text-white/30 font-mono text-[9px] tracking-[0.5em] uppercase">Viewing Asset</span>
@@ -72,7 +72,7 @@ export const ProjectGallery = ({ screenshots, onClose }) => {
       </motion.div>
 
       {/* Main Viewport */}
-      <div className="relative w-full h-[80vh] flex items-center justify-center cursor-grab active:cursor-grabbing">
+      <div className="relative w-full grow flex items-center justify-center cursor-grab active:cursor-grabbing">
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
@@ -80,12 +80,12 @@ export const ProjectGallery = ({ screenshots, onClose }) => {
           onDragEnd={onDragEnd}
           animate={{ x: `calc(${-index * 100}% - ${index * 80}px)` }}
           transition={{ type: "spring", stiffness: 250, damping: 30 }}
-          className="flex gap-20 items-center w-[90vw] md:w-[80vw] h-full"
+          className="flex gap-20 items-center w-[90vw] md:w-[80vw] h-full pb-20"
         >
           {screenshots.map((img, idx) => (
             <motion.div
               key={idx}
-              className="relative shrink-0 w-full h-full flex flex-col items-center justify-center"
+              className="shrink-0 w-full h-full flex flex-col items-center justify-center"
               animate={{ 
                 scale: index === idx ? 1 : 0.85,
                 opacity: index === idx ? 1 : 0.2,
@@ -93,28 +93,30 @@ export const ProjectGallery = ({ screenshots, onClose }) => {
               }}
               transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
             >
-              <AnimatePresence mode="wait">
-                {index === idx && (
-                  <motion.div 
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute -top-12 text-white text-lg md:text-4xl font-condensed uppercase tracking-[0.2em] text-center w-full"
-                  >
-                    {img.title}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <div className="relative max-w-full max-h-[80vh] object-contain expand-cursor">
+                <AnimatePresence mode="wait">
+                  {index === idx && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute -top-8 md:-top-12 text-white text-lg md:text-4xl font-condensed uppercase tracking-[0.2em] text-center w-full"
+                    >
+                      {img.title}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
-              <motion.img
-                initial={{ scale: 1.1, opacity: 0 }}
-                animate={{ scale: index === idx ? 1 : 0.85, opacity: index === idx ? 1 : 0.2 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                src={img.url}
-                alt={img.title}
-                className="max-w-full max-h-[80%] object-contain rounded-xl md:rounded-2xl shadow-[0_40px_100px_rgba(0,0,0,0.8)] expand-cursor"
-                draggable={false}
-              />
+                <motion.img
+                  initial={{ scale: 1.1, opacity: 0 }}
+                  animate={{ scale: index === idx ? 1 : 0.85, opacity: index === idx ? 1 : 0.2 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  src={img.url}
+                  alt={img.title}
+                  className="rounded-xl md:rounded-2xl shadow-[0_40px_100px_rgba(0,0,0,0.8)] h-full"
+                  draggable={false}
+                />
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -127,7 +129,8 @@ export const ProjectGallery = ({ screenshots, onClose }) => {
         transition={{ delay: 0.6 }}
         className="absolute bottom-12 flex flex-col items-center gap-6"
       >
-        <div className="flex gap-1.5">
+        <div className="flex gap-1.5 bobg-black/40 backdrop-blur-xl border border-white/10 p-2 rounded-full">
+          {/* relative flex items-center justify-start gap-4 group cursor-pointer bg-black/40 backdrop-blur-xl border border-white/10 p-1.5 rounded-full shadow-2xl h-[56px] overflow-hidden min-w-[7rem] */}
           {screenshots.map((_, i) => (
             <motion.div 
               key={i}
