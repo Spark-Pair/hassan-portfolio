@@ -78,16 +78,6 @@ export const ShowReel: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ i
                 </motion.div>
               )}
             </AnimatePresence>
-
-            {/* Subtle Progress Bar at bottom of video */}
-            <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-white/5">
-              <motion.div 
-                className="h-full bg-white/20 origin-left"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              />
-            </div>
           </motion.div>
 
           {/* Bottom Hint */}
