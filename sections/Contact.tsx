@@ -38,7 +38,7 @@ export const ContactSection = () => {
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error("Email Error:", error);
-      alert("Submission failed. Please try again or email hassan@sparkpair.dev directly.");
+      alert(`Submission failed. Please try again or email ${PERSONAL_INFO.email} directly.`);
     } finally {
       setIsSubmitting(false);
     }

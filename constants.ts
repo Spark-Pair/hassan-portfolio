@@ -17,7 +17,7 @@ export const PERSONAL_INFO = {
   linkedin: import.meta.env.VITE_LINKEDIN,
   github: import.meta.env.VITE_GITHUB,
   instagram: import.meta.env.VITE_INSTAGRAM,
-  resumeFileName: import.meta.VITE_RESUME_FILE_NAME,
+  resumeFileName: import.meta.env.VITE_RESUME_FILE_NAME,
 };
 
 export const SKILLS: Skill[] = [
